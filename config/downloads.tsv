@@ -1,0 +1,18 @@
+asset	category	source_or_accession	raw_subdir	estimated_gb_min	estimated_gb_max	status	notes
+TCGA-PANCAN-HiSeq	expression	UCSC Xena	data/raw/tcga	3.0	4.0	planned	Toil RSEM; download only when bulk stage starts
+Visium_BRCA	spatial	10x public sample	data/raw/visium/BRCA			planned	Keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+Visium_CRC	spatial	10x public sample	data/raw/visium/CRC			planned	Keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+Visium_NSCLC	spatial	10x public sample	data/raw/visium/NSCLC			planned	Keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+Visium_KIRC	spatial	10x public sample	data/raw/visium/KIRC			planned	Keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+Visium_HNSCC	spatial	10x public sample	data/raw/visium/HNSCC			planned	Keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+Visium_ESCA	spatial	10x public sample	data/raw/visium/ESCA			planned	Primary T2 list; keep filtered_feature_bc_matrix.h5 and spatial/; measure archive before download
+GSE78220	ICI	GEO:data accession	data/raw/ici/GSE78220			planned	Record platform and response endpoint before retrieval
+GSE91061	ICI	GEO:data accession	data/raw/ici/GSE91061			planned	Record platform and response endpoint before retrieval
+GSE126044	ICI	GEO:data accession	data/raw/ici/GSE126044			planned	Record platform and response endpoint before retrieval
+GSE176307	ICI	GEO:data accession	data/raw/ici/GSE176307			planned	Record platform and response endpoint before retrieval
+GSE135222	ICI	GEO:data accession	data/raw/ici/GSE135222			planned	Record platform and response endpoint before retrieval
+IMvigor210	ICI	IMvigor210CoreBiologies R package	data/raw/ici/IMvigor210			planned	Install/use package under its license; do not mirror without permission
+PRJNA482620	ICI	TIGER:data accession	data/raw/ici/PRJNA482620			planned	Check access terms; controlled access must not block main flow
+PRJEB25780	ICI	ENA:data accession	data/raw/ici/PRJEB25780			planned	Check access terms; controlled access must not block main flow
+KEGG_pyroptosis	geneset	KEGG:hsa04210,hsa04217,hsa04216	data/raw/genesets			planned	Store GMT exports with source and retrieval metadata
+FerrDb	geneset	FerrDb	data/raw/genesets			planned	Store version and license metadata with GMT

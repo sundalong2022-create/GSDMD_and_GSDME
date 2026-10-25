@@ -1,0 +1,21 @@
+name: gsdm-compartment
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+  - pyyaml
+  - pytest
+  - r-base
+  - r-biocmanager
+  - r-remotes
+  - matplotlib
+  - seaborn
+  - scanpy
+  - squidpy
+  - anndata
+  - jupyterlab

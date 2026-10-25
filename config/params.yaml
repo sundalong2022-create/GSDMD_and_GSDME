@@ -1,0 +1,100 @@
+seed: 42
+
+multiple_testing:
+  method: Benjamini-Hochberg
+  family: gene x contrast across datasets
+
+single_cell:
+  n_endo_min: 100
+
+scoring:
+  family_score_method: mean_gene_zscore
+  gene_score_method: gene_zscore
+  expression_scale: log_normalized
+  status: provisional; freeze before analysis
+
+deconvolution:
+  primary_package: immunedeconv
+  methods:
+    - quantiseq
+    - epic
+    - mcp-counter
+  cibersortx:
+    enabled: false
+    role: optional_revalidation_only
+    requires_token: true
+
+data_policy:
+  raw_is_read_only: true
+  download_when_needed: true
+  preserve_archives: false
+  max_nan_fraction: 0.05
+
+validation:
+  min_result_rows: 1
+  max_nan_fraction: 0.05
+
+t0:
+  expected_genes:
+    - GSDMD
+    - GSDME
+  annotation_flags:
+    proxy_note_required: true
+
+t1:
+  family_genes:
+    - GSDMA
+    - GSDMB
+    - GSDMC
+    - GSDMD
+    - GSDME
+  bootstrap_n: 1000
+  standardization_scope: null
+  standardization_scope_status: must_freeze_before_run
+  ssgsea_method: must_freeze_before_run
+
+t2:
+  primary_cancers:
+    - ESCA
+    - BRCA
+    - NSCLC
+    - CRC
+    - KIRC
+  reserve_cancers:
+    - HNSCC
+  qc:
+    min_genes: null
+    max_genes: null
+    max_mito_pct: null
+    status: must_freeze_before_run
+  gsdmd_high_quantile: 0.75
+  permutations: 1000
+  distance_permutations: 1000
+  replicate_unit: sample
+
+t3:
+  meta_estimator: REML
+  response_encoding: CR_PR=R; SD_PD=NR
+  os_is_separate_endpoint: true
+  min_public_cohorts: 6
+  i2_reduction_threshold: 0.20
+  stratum_source: cohort_sample_expression_or_predeclared_proxy
+
+t4:
+  death_programs:
+    - apoptosis
+    - necroptosis
+    - ferroptosis
+  ssgsea_method: must_freeze_before_run
+  covariates:
+    - tumor_purity
+    - other_three_death_program_scores
+
+gates:
+  g1_min_attenuation: 0.30
+  g1_ci_excludes_zero: true
+  g2_min_cancers: 3
+  g2_total_cancers: 5
+  g2_permutation_p: 0.05
+  g3_min_cohorts: 6
+  g3_i2_reduction: 0.20
